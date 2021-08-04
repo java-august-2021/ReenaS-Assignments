@@ -4,7 +4,7 @@
 public class HelloJava {
     public static void main(String[] args) {
         System.out.println("Hello Java World!!");
-        // Primitive Type -8 
+        // Primitive Types -8 
         byte myByte=20;
         int myInt=5000000;
         long myLong=8990099888978L;
@@ -17,7 +17,9 @@ public class HelloJava {
         String myName=new String("John");
         System.out.println(myName);
         System.out.println(myName.toUpperCase());
-        // OneTo255();
+        //Calling Method
+        OneTo255();
+        // Method overloading
         greet();
         greet("Frank");
 
@@ -34,7 +36,5 @@ public class HelloJava {
         System.out.println("Hello Welcome to CD " + firstName);
 
     }
-    
-
     
 }

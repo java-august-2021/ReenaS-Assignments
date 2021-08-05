@@ -34,6 +34,9 @@ public class HelloJava {
     }
     public static void greet(String firstName) {
         System.out.println("Hello Welcome to CD " + firstName);
+        System.out.println("Hello " + firstName + " welcome to Java");
+        String lastName="Dangi";
+        System.out.println(String.format("Hello %s %s welcome to Jaclearva",firstName,lastName));
 
     }
     

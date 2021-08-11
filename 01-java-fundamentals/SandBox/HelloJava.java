@@ -1,6 +1,8 @@
 /**
  * HelloJava
  */
+import java.time.LocalDate; // import the LocalDate class
+
 public class HelloJava {
     public static void main(String[] args) {
         System.out.println("Hello Java World!!");
@@ -12,7 +14,8 @@ public class HelloJava {
         double myDouble=56.7898892;
         boolean myBool=true;
         char myChar='g';
-
+        LocalDate myObj = LocalDate.now();// Create a date object
+        System.out.println(myObj); // Display the current date
         // Non Primitive Type
         String myName=new String("John");
         System.out.println(myName);

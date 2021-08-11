@@ -74,5 +74,23 @@ public class PuzzleJava {
 
     }
 
+    // shuffleArray
 
+// Write a method that takes an array and and mixes up all the values in a pseudo-random way. Hint: use random indexes within the array, and swap values repeatedly. 
+
+public int[] shuffleArray(int[] array)
+{
+    int index, temp;
+    Random random = new Random();
+    for (int i = array.length - 1; i > 0; i--)
+    {
+        index = random.nextInt(i + 1);
+        System.out.println(index);
+        temp = array[index];
+        array[index] = array[i];
+        array[i] = temp;
+    
+    }
+    return array;
+}
 }

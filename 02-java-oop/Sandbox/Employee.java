@@ -6,13 +6,11 @@ public class Employee {
     
     // Attribute/Fields 
     // Access Modifiers 
- 
     private String email;
     private Double pay;
     private String project;
     private static int noOfEmps=0;
     private Employee manager;
-
    
     // Constructor  
     public Employee(String email,double pay){

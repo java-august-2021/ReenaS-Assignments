@@ -1,4 +1,4 @@
-package com.dojo.survey;
+package com.dojo.student;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

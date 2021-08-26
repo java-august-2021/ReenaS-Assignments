@@ -10,7 +10,9 @@
 </head>
 <body>
 <h1> These are the stack details for you : 
-<c:out value="${sessionScope.fName}"/>
+<c:out value="${student.firstName}"/>
+<c:out value="${student.lastName}"/>
+<c:out value="${student.email}"/>
 </h1>
 
 

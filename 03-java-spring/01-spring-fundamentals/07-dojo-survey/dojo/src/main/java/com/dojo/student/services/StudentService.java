@@ -35,5 +35,15 @@ public class StudentService {
 	public void deleteStudent(Long id) {
 		studentRepository.deleteById(id);
 	}
+	// Update Student	
+	public Student updateStudent(Long id, String firstName, String lastName, String email) {
+		//query for student 
+		Student student=findStudent(id);
+		student.setFirstName(firstName);
+		student.setLastName(lastName);
+		student.setEmail(email);
+		return studentRepository.save(student);
+		
+	}
 	
 }

@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>    
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>  
+<%@ page isErrorPage="true" %>  
 
 <!DOCTYPE html>
 <html>
@@ -12,39 +13,31 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <div class="container">
-	<h1>Welcome to Coding Dojo!</h1>
+	<h1>Edit Student - ${editStudent.firstName}</h1>
 	<h2><a href="/welcome">Dashboard</a></h2>	
-	<form:form action="/create" method="post" modelAttribute="newStudent">
+	<form:form action="/update/${editStudent.id}" method="post" modelAttribute="editedStudent">
+	   <input type="hidden" name="_method" value=put>
 	    <div class="form-group">
 	        <form:label path="firstName">First Name:</form:label>
 	        <form:errors class="text-danger" path="firstName"/>
-	        <form:input class="form-control" path="firstName"/>
+	        <form:input class="form-control" path="firstName" value="${editStudent.firstName}"/>
 	    </div>
 	    <div class="form-group">
 	        <form:label path="lastName">Last Name:</form:label>
 	        <form:errors class="text-danger" path="lastName"/>
-	         <form:input class="form-control" path="lastName"/>
+	         <form:input class="form-control" path="lastName" value="${editStudent.lastName}"/>
 	    
 	    </div>
 	    <div class="form-group">
 	        <form:label path="email">Email:</form:label>
 	        <form:errors class="text-danger" path="email"/>
-	        <form:input class="form-control" path="email"/>
+	        <form:input class="form-control" path="email" value="${editStudent.email}"/>
 	    </div>
 	    <input type="submit" class="btn btn-primary" value="Submit"/>
 	</form:form>    
 	
-<%-- 	<form action="/createOld" method="POST">
-	<p> First Name: <input type="text" name="firstName"> </p>
-	<p> Last Name: <input type="text" name="lastName"> </p>
-	<p> Email: <input type="text" name="email"> </p>
-	
-	
-	<p><button>Submit</button></p>
-	<hr>
-	
-	</form> --%>
 </div>
 
 

@@ -21,6 +21,7 @@
             <th>first name</th>
             <th>last name</th>
             <th>email</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -37,7 +38,10 @@
             <td>
             <form action="/delete/${student.id}" method="post">
 			    <input type="hidden" name="_method" value="delete">
-			    <input type="submit" value="Delete">
+			    <button class="btn btn-danger">Delete</button>	
+			</form>
+			<form action="/edit/${student.id}">
+			   <button class="btn btn-info">Edit</button>	
 			</form>
             </td>
            

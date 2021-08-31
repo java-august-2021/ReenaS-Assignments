@@ -1,6 +1,5 @@
 package com.dojo.student.controllers;
 
-
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dojo.student.models.Student;
 import com.dojo.student.services.StudentService;
-
 
 @Controller
 public class HomeController {

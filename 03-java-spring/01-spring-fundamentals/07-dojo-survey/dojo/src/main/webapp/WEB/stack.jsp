@@ -13,8 +13,12 @@
 <c:out value="${student.firstName}"/>
 <c:out value="${student.lastName}"/>
 <c:out value="${student.email}"/>
+
+<h2>Student Projects:</h2>
+<hr>
+	<c:forEach items="${projects}" var="project">
+	<p> <c:out value="${project.projectName}"/></p>   
+	</c:forEach>
 </h1>
-
-
 </body>
 </html>

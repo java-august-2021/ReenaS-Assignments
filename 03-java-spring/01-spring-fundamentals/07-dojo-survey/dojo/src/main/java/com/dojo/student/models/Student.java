@@ -1,9 +1,12 @@
 package com.dojo.student.models;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -25,6 +28,8 @@ public class Student {
     @Size(min = 2, max = 20, message="Email should be between 2-20")
 	private String email;
 	
+	@OneToMany(mappedBy="student", fetch = FetchType.LAZY)
+	 private List<Project> projects;
 	
 	public Long getId() {
 		return id;
@@ -51,5 +56,14 @@ public class Student {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
+	}
+	
 	
 }

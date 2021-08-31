@@ -13,7 +13,9 @@
 </head>
 <body>
 <h1>Welcome </h1>
-<a href="/">Home</a>
+<a href="/">New Student</a>
+<a href="/">Project Dashboard</a>
+<a href="/projects/new">Create New Project</a>
 
 <table class="table table-dark">
     <thead>

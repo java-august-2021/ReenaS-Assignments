@@ -24,6 +24,8 @@
             <th>last name</th>
             <th>email</th>
             <th>Action</th>
+            <th>Project Liked</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -46,10 +48,12 @@
 			   <button class="btn btn-info">Edit</button>	
 			</form>
             </td>
-           
+            <td>
+             <c:out value="${student.projectLiked.size()}"/>
+            </td>
+           <td><a href="/projects/login/${student.id}">Login</a> </td>
         </tr>
         </c:forEach>
-      
     </tbody>
 </table>
 

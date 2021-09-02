@@ -6,6 +6,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -21,7 +24,7 @@ public class Student {
 	@NotNull
     @Size(min = 2, max = 200, message="Dummy, First Name should be between 2-200")
 	private String firstName;
-	
+
 	private String lastName;
 	
 	@NotNull
@@ -31,10 +34,26 @@ public class Student {
 	@OneToMany(mappedBy="student", fetch = FetchType.LAZY)
 	 private List<Project> projects;
 	
+	@ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "likes", 
+        joinColumns = @JoinColumn(name = "student_id"), 
+        inverseJoinColumns = @JoinColumn(name = "project_id")
+    )
+    private List<Project> projectLiked;
+	
 	public Long getId() {
 		return id;
 	}
 	
+	public List<Project> getProjectLiked() {
+		return projectLiked;
+	}
+
+	public void setProjectLiked(List<Project> projectLiked) {
+		this.projectLiked = projectLiked;
+	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}

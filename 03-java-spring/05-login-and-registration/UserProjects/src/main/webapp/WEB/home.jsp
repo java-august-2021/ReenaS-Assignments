@@ -9,7 +9,7 @@
 	<title>Welcome</title>
 </head>
 <body>
-	<h1>Welcome, <c:out value="${user.email}" /></h1>
+	<h1>Welcome</h1>
 	<%= session.getAttribute("userId") %>
 	<a href="/logout">Logout</a>
 </body>

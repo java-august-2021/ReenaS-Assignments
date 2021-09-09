@@ -1,6 +1,5 @@
 package com.user.projects.models;
 import javax.persistence.Entity;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,16 +16,17 @@ public class User {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     
+    @NotBlank
     @Size(min = 2, max = 200, message="First Name should be between 2-200")
-    private String firstName;
+	private String firstName;
 	
 	private String lastName;
 	
-	//Validation
 	@Email
     private String email;
     
-    @Size(min = 8, max = 200, message="Password should be atleast 8 character long!")
+    @NotBlank
+    @Size(min = 8, max = 200, message="Password should be atleat 8 char long!")
     private String password;
     
     @NotBlank @Transient

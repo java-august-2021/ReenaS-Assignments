@@ -8,33 +8,24 @@ import org.springframework.validation.Validator;
 import com.user.projects.models.User;
 import com.user.projects.repositories.UserRepository;
 
-
-@Component 
+@Component
 public class UserValidator implements Validator{
-	@Autowired 
-	private UserRepository userRepo;
-	
-	// 1
-    @Override
+	@Autowired
+	private UserRepository uRepo;
+	@Override
     public boolean supports(Class<?> clazz) {
         return User.class.equals(clazz);
     }
- // 2
-    @Override
+	@Override
     public void validate(Object target, Errors errors) {
         User user = (User) target;
         
-        if (!user.getPasswordConfirmation().equals(user.getPassword())) {
-            // 3
-            errors.rejectValue("passwordConfirmation", "Match","Password does not match!");
-        }     
-        if(userRepo.findByEmail(user.getEmail())!=null) {
-        	 errors.rejectValue("email", "Unique","Email already exist!!");
+        if(this.uRepo.findByEmail(user.getEmail()) != null) {
+        	errors.rejectValue("email", "Unique","Email address already exist");
         }
         
+        if (!user.getPasswordConfirmation().equals(user.getPassword())) {
+            errors.rejectValue("passwordConfirmation", "Match","Password do not match");
+        }         
     }
-    
-    
-  
-  }
- 
+}
